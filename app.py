@@ -125,7 +125,6 @@ with col1:
 
     # Query section
     if st.session_state.processing_complete:
-        st.markdown("<div class='info-box'>", unsafe_allow_html=True)
         st.markdown("### 🔍 Ask Questions")
         query = st.text_input("What would you like to know about the document?")
         
@@ -160,7 +159,6 @@ with col1:
                     answer = llm.invoke(template).content
                     
                     # Display answer
-                    st.markdown("<div class='answer-container'>", unsafe_allow_html=True)
                     st.markdown("### 💡 Answer:")
                     st.markdown(answer)
                     st.markdown("</div>", unsafe_allow_html=True)
