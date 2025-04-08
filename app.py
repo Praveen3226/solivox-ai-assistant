@@ -55,7 +55,7 @@ if 'vectordb' not in st.session_state:
 
 # Sidebar for API keys and configuration
 with st.sidebar:
-    st.image("SOLIVOXAI.jpg", width=150)
+    st.image("SOLIVOX-AI.png", width=150)
     
     # For production, use st.secrets instead of hardcoded keys
     api_key = "AIzaSyCrt7aTKCag1U2t7vfutrODHvSacvyi6Ks"  # In production, use st.secrets["GOOGLE_API_KEY"]
