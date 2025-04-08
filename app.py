@@ -55,7 +55,7 @@ if 'vectordb' not in st.session_state:
 
 # Sidebar for API keys and configuration
 with st.sidebar:
-    st.image(r"C:\Users\viper\Desktop\NOTES\AI_ML_DS\SOLIVOX-AI.png", width=150)
+    st.image("SOLIVOX-AI.png", width=150)
     st.markdown("### Configuration")
     
     # For production, use st.secrets instead of hardcoded keys
