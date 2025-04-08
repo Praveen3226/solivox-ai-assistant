@@ -3,7 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain.prompts import PromptTemplate
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import CharacterTextSplitter
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import FAISS
 import os
 from pathlib import Path
 
@@ -108,10 +108,9 @@ with col1:
                # Path(persist_directory).mkdir(exist_ok=True)
                 
                 # Create and persist vector database
-                vectordb = Chroma.from_documents(
+                vectordb = FAISS.from_documents(
                     pages, 
-                    embedding=embeddings, 
-                   
+                    embedding=embeddings
                 )
               #  vectordb.persist()
                 
