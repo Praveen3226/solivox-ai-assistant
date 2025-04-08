@@ -104,16 +104,16 @@ with col1:
                 )
                 
                 # Create vector database directory if it doesn't exist
-                persist_directory = "./chromadb_local"
-                Path(persist_directory).mkdir(exist_ok=True)
+                #persist_directory = "./chromadb_local"
+               # Path(persist_directory).mkdir(exist_ok=True)
                 
                 # Create and persist vector database
                 vectordb = Chroma.from_documents(
                     pages, 
                     embedding=embeddings, 
-                    persist_directory=persist_directory
+                   
                 )
-                vectordb.persist()
+              #  vectordb.persist()
                 
                 # Store in session state
                 st.session_state.vectordb = vectordb
