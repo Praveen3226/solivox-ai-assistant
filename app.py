@@ -171,7 +171,6 @@ with col1:
 
 with col2:
     # Instructions and tips
-    st.markdown("<div class='info-box'>", unsafe_allow_html=True)
     st.markdown("### 📝 How It Works")
     st.markdown("""
     1. **Upload** your PDF document
