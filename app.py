@@ -71,7 +71,6 @@ with st.sidebar:
 col1, col2 = st.columns([3, 2])
 
 with col1:
-    st.markdown("<div class='info-box'>", unsafe_allow_html=True)
     st.markdown("### 📄 Upload Document")
     uploaded_file = st.file_uploader("Upload your PDF file", type="pdf")
     
@@ -183,7 +182,6 @@ with col2:
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Tips for better questions
-    st.markdown("<div class='info-box'>", unsafe_allow_html=True)
     st.markdown("### 💡 Tips for Better Results")
     st.markdown("""
     - Ask specific questions for more precise answers
@@ -195,11 +193,43 @@ with col2:
     
     # Document status
     if st.session_state.processing_complete:
-        st.markdown("<div class='info-box'>", unsafe_allow_html=True)
         st.markdown("### 📊 Document Status")
         st.success("Document loaded and ready for queries")
         st.markdown("</div>", unsafe_allow_html=True)
 
 # Footer
-st.markdown("---")
-st.markdown("Powered by Google Gemini and Langchain | © 2025 Solivox AI")
+st.markdown("""
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: #E0E0E0;
+            text-align: center;
+            padding: 14px 0;
+            font-size: 0.95rem;
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            letter-spacing: 0.5px;
+            z-index: 9999;
+            box-shadow: 0 -1px 8px rgba(0, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer strong {
+            color: #6FE3E1;
+        }
+    </style>
+
+    <div class="footer">
+        🤖 Powered by Langchain AI | &copy; 2025 <strong>Solivox AI</strong>
+    </div>
+""", unsafe_allow_html=True)
